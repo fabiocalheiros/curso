@@ -1,3 +1,12 @@
 
 
 <h1 class="btn btn-success">Hello Word <%= @name %></h1>
+
+
+<% if @name == "Fábio Calheiros" %>
+	
+	<%= content_for :sidebar do %>
+		menu lateral
+	<% end %>
+
+<% end %>

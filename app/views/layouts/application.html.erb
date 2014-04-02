@@ -5,10 +5,37 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
 
-<%= yield %>
+	<%= render partial: 'shared/navbar' %>
+
+    <div class="container">
+
+      <div class="row">
+
+      	<div class="col-md-9">
+      		<%= yield %>
+      	</div>
+
+      	<div class="col-md-3">
+      		<!-- testa se o conteudo sidebar que esta dentro do template index existe -->
+      		<% if content_for? :sidebar %>
+      		<!-- se a sidebar existe traz a sidebar que esta dentro do index -->
+      			<%= yield :sidebar %>
+      		<% else %>
+      		<!-- se a sidebar não existe traz o include padrao -->
+      			<%= render partial: 'shared/sidebar' %>
+			<% end %>      		
+      	</div>
+
+      </div>
+
+    </div><!--/.container-->
+
+
+
 
 </body>
 </html>
