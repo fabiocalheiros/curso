@@ -7,13 +7,21 @@ gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
 
-
-group :development do
+group :development, :test do
 	gem 'sqlite3'
+	gem 'rspec-rails'
+	gem 'capybara'
+	gem 'shoulda'
+	gem 'capybara-webkit'
 end
 
+# Integração com postGree
 group :production do
 	gem 'pg'
+end
+
+group :test do
+	gem 'rspec'
 end
 
 gem 'rails_12factor'
