@@ -49,4 +49,14 @@ describe User do
 			user.save.should be_true
 		end
 	end
+
+	it 'does not create two users with same email' do
+		user1 = User.create name: "Fabio Calheiros",
+						   email: "fabio.calheiros@gmail.com",
+						   age: 17
+		user2 = User.new name: "Outro Nome",
+						 email: "fabio.calheiros@gmail.com",
+						 age: 17
+		user2.save.should be_false
+	end
 end

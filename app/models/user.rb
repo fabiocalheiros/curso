@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 	validates :email, presence: true, allow_blank: false
 	validates :name, presence: true, allow_blank: false
 	validates :gender, presence: true, if: :adulthood
-	#validates_uniqueness_of :email
+	validates_uniqueness_of :email
 
 	# Associations
 
