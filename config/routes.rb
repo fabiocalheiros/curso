@@ -6,4 +6,5 @@ FirstApp::Application.routes.draw do
   # pega o nome da url "black" e atribui a uma difinição no controller welcome
   get 'black', to: 'welcome#black'
   
+  get '/about', to: 'welcome#about', as: :about
 end

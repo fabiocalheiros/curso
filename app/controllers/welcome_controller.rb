@@ -11,4 +11,8 @@ class WelcomeController < ApplicationController
 		@text = "Esta é uma página com novo layout"
 		render layout: 'application_black'
 	end
+
+	def about
+		@address = "Rua Maranhão, 1283"
+	end
 end
