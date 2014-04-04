@@ -2,6 +2,9 @@
 
 <h1 class="btn btn-success">Hello Word <%= @name %></h1>
 
+<% label = "Listagem de Usuários" %>
+<%= link_to label, users_path, class: 'btn btn-default' %>
+
 <% if @name == "Fábio Calheiros" %>
 	
 	<%= content_for :sidebar do %>
