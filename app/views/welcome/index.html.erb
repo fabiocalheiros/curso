@@ -1,6 +1,6 @@
 
 
-<h1 class="btn btn-success">Hello Word <%= @name %></h1>
+<h1 class="btn btn-success"><%= t('hello') %>, <%= @name %></h1>
 
 <% label = "Listagem de Usuários" %>
 <%= link_to label, users_path, class: 'btn btn-default' %>
