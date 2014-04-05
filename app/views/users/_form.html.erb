@@ -17,10 +17,12 @@
 		<%= f.number_field :age, class: 'form-control' %>
 	</div>
 	<br>
-	
+		
+	<div class="input-group col-md-6">
 		<% options = [ ["Feminino", User::FEMALE ], ["Masculino", User::MALE]] %>
-		<%= f.select :gender, options, {include_blank: "-- Escolha um sexo --"} %>
-	<br>
+		<%= f.select :gender, options, {include_blank: "-- Escolha um sexo --"}, class: 'form-control ' %>
+	</div>
+	
 	<br>
 	<%= f.submit "Salvar", class: "btn btn-success" %>
 
