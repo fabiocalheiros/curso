@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
 	validates :gender, presence: true, if: :adulthood
 	validates_uniqueness_of :email
 
+	has_many :bills, dependent: :destroy
+
 	# Associations
 
 	# Scopes
