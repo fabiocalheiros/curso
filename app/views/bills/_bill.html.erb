@@ -6,7 +6,12 @@
 	<br>
 	<%= number_to_currency bill.value %>
 
-	<%= link_to "<i class='glyphicon glyphicon-trash'></i>".html_safe,
+	<%= link_to "<i class='bt_edicao glyphicon glyphicon-pencil'></i>".html_safe,
+				edit_user_bill_path(bill.user, bill),
+				remote: true,
+				class: 'pull-right' %>
+
+	<%= link_to "<i class='bt_edicao glyphicon glyphicon-trash'></i>".html_safe,
 				[bill.user, bill],
 				method: :delete,
 				remote: true,

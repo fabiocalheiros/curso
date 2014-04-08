@@ -7,5 +7,5 @@
 
 <% else %>
 	<% form = render partial: 'bills/form', locals: {bill: @bill} %>
-	$("#new_bill").html("<%= j(form) %>");
+	$("#bills").html("<%= j(form) %>");
 <% end %>
