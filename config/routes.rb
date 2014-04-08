@@ -8,5 +8,8 @@ FirstApp::Application.routes.draw do
   
   get '/about', to: 'welcome#about', as: :about
 
-  resources :users
+  # cria uma rota de biils dentro de usuarios
+  resources :users do
+  	resources :bills
+  end
 end

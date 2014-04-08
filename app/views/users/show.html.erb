@@ -13,5 +13,19 @@
 <p><b>Tempo entre criação e edição:</b> <%= distance_of_time_in_words @user.updated_at, @user.created_at %></p>
 
 <%= link_to t('back'), users_path, class: 'btn btn-default' %>
-
 <%= link_to t('edit'), edit_user_path(@user), class: 'btn btn-primary' %>
+
+<br><br>
+
+<h4> Contas do usuário <b><%= @user.name %></b></h4>
+
+<div id="new_bill">
+	<%= render partial: 'bills/form', locals: {bill: Bill.new(user: @user)} %>
+</div>
+
+<hr>
+
+<div id="bills">
+	<!-- Renderiza o partial index dentro de bills e passa pra ele os bills -->
+	<%= render partial: 'bills/index', locals: {bills: [@user.bills]} %>
+</div>

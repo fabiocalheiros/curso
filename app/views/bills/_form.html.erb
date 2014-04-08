@@ -1,0 +1,31 @@
+<h5>Nova Conta</h5>
+
+<!-- remote: true'= requisição ajax -->
+
+<%= render partial: 'shared/error_messages', locals: {resource:bill} %>
+
+<%= form_for( [bill.user, bill], remote: true) do |f| %>
+	<div class="input-group col-md-6">
+		<span class="input-group-addon">Nome da Conta</span>
+		<%= f.text_field :name, class: 'form-control' %>
+	</div>
+	<br>
+	<div class="input-group col-md-6">
+		<span class="input-group-addon">Descrição da conta</span>
+		<%= f.text_area :description, class: 'form-control' %>
+	</div>
+	<br>
+	<div class="input-group col-md-6">
+		<span class="input-group-addon">Valor</span>
+		<%= f.text_field :value, class: 'form-control' %>
+	</div>
+	<br>
+	<div class="input-group col-md-6">
+		<span class="input-group-addon">Data da Conta</span>
+		<%= f.date_field :date, class: 'form-control' %>
+	</div>
+	<br>
+		
+	<br>
+	<%= f.submit "Salvar conta", class: "btn btn-success" %>
+<% end %>
