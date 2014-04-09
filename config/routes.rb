@@ -1,5 +1,6 @@
 FirstApp::Application.routes.draw do
 
+  devise_for :users
   # quando acessar a url principal vai para o controler welcome e chama a index
   root 'welcome#index'
 
